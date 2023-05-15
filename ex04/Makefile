@@ -6,7 +6,7 @@
 #    By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/24 23:20:21 by mcourtoi          #+#    #+#              #
-#    Updated: 2023/05/11 05:02:50 by mcourtoi         ###   ########.fr        #
+#    Updated: 2023/05/15 13:21:32 by mcourtoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,22 +21,18 @@ RM			=	rm -rf
 ######################################
 #             EXECUTABLE             #
 ######################################
-NAME		=	zombie
+NAME		=	my_sed
 
 #######################################
 #             DIRECTORIES             #
 #######################################
 SRC_DIR		=	src
 OBJ_DIR		=	objs
-INC_DIR		=	private
 
 ######################################
 #            SOURCE FILES            #
 ######################################
 SRC			=						\
-				class/Zombie.cpp	\
-				newZombie.cpp		\
-				randomChump.cpp		\
 				main.cpp
 
 ######################################
@@ -55,7 +51,6 @@ CXXFLAGS	+=	-Wall -Wextra -Werror
 CXXFLAGS	+=	-MMD -MP
 CXXFLAGS	+=	-Wshadow
 CXXFLAGS	+=	-std=c++98
-CXXFLAGS	+=	-I${INC_DIR}
 
 #######################################
 #                RULES                #
