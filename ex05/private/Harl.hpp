@@ -6,23 +6,38 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:30:13 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/15 13:35:20 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:05:45 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 # define HARL_HPP
 
-class harl	{
+# include <string>
+
+class Harl;
+
+typedef void			(Harl::*t_func)(void) const;
+typedef struct s_complain	t_complain;
+
+struct s_complain
+{
+	std::string const	str;
+	t_func const		func;
+};
+
+class Harl	{
 private:
-	void	debug();
-	void	info();
-	void	warning();
-	void	error();
+	static	t_complain	__lookup[];
+
+	void	debug() const;
+	void	info() const;
+	void	warning() const;
+	void	error() const;
 public:
-	harl();
-	~harl();
-	void	complain(std::string level);
+	Harl();
+	~Harl();
+	void	complain(std::string const &level) const;
 };
 
 #endif

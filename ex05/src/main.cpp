@@ -1,46 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 13:31:36 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/15 13:36:07 by mcourtoi         ###   ########.fr       */
+/*   Created: 2023/05/15 16:59:34 by mcourtoi          #+#    #+#             */
+/*   Updated: 2023/05/15 17:06:09 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-harl::harl(/* args */)
+int	main(int const ac, char const **av)
 {
-}
-
-harl::~harl()
-{
-}
-
-void	debug()
-{
-	
-}
-
-void	info()
-{
-	
-}
-
-void	warning()
-{
-	
-}
-
-void	error()
-{
-	
-}
-
-void	complain(std::string level)
-{
-	
+	Harl	Harl;
+	if (ac != 2)
+		return 1;
+	Harl.complain(std::string(av[1]));
+	return 0;
 }
