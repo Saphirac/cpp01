@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:13:21 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/15 13:23:43 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/15 13:40:47 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,23 @@ int	main(int const ac, char const **av)
 	std::ifstream		src;
 	std::ofstream		dest;
 	std::stringstream	tmp;
-	if (ac > 4 && !av[1][0] && !av[2][0])
+	if (ac < 3 || ac > 4 || !av[1][0] || !av[2][0])
 	{
-		printf("Wrong argument input.\n");
+		std::cerr << "Wrong argument input.\n";
 		return 1;
 	}
 	filename = av[1];
 	src.open(filename.c_str());
 	if (src.fail())
 	{
-		printf("Problem on opening file.\n");
+		std::cerr << "Problem on opening file.\n";
 		return 1;
 	}
 	dest.open(filename.append(".replace").c_str());
 	if (dest.fail())
 	{
 		src.close();
-		printf("Problem on creating file.\n");
+		std::cerr << "Problem on creating file.\n";
 		return 1;
 	}
 	tmp << src.rdbuf();
