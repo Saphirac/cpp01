@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:31:36 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/15 17:42:48 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:43:09 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ Harl::Harl(){}
 Harl::~Harl(){}
 
 t_complain	Harl::__lookup[] = {
-	{std::string("DEBUG"), &Harl::debug},
-	{std::string("INFO"), &Harl::info},
-	{std::string("WARNING"), &Harl::warning},
-	{std::string("ERROR"), &Harl::error},
-	{std::string(""), NULL}
+	{0, std::string("DEBUG"), &Harl::debug},
+	{1, std::string("INFO"), &Harl::info},
+	{2, std::string("WARNING"), &Harl::warning},
+	{3, std::string("ERROR"), &Harl::error},
+	{-1, std::string(""), NULL}
 };
 
 void	Harl::debug() const
@@ -51,10 +51,23 @@ void	Harl::error() const
 
 void	Harl::complain(std::string const &level) const
 {
-	size_t	i = 0;
+	size_t i = 0;
 
-	while (Harl::__lookup[i].func && Harl::__lookup[i].str.compare(level))
-		i++;
-	if (Harl::__lookup[i].func)
-		(this->*Harl::__lookup[i].func)();
+	for ( ; Harl::__lookup[i].func && Harl::__lookup[i].str.compare(level); i++);
+	if (!Harl::__lookup[i].func)
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]\n";
+		return ;
+	}
+	switch (__lookup[i].lvl_number)
+	{
+		case 0 :
+			this->debug();
+		case 1 :
+			this->info();
+		case 2 :
+			this->warning();
+		case 3 :
+			this->error();
+	}
 }
