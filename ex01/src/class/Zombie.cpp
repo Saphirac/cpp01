@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 04:24:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 05:14:28 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:31:37 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Zombie::Zombie()
 
 Zombie::~Zombie(){}
 
-void	Zombie::announce()
+void	Zombie::announce() const
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << '\n';
 }

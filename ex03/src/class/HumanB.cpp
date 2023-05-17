@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 22:36:15 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 23:04:26 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:44:08 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ _Weapon(NULL)
 
 HumanB::~HumanB(){}
 
-Weapon	*HumanB::getWeapon()
+Weapon const		*HumanB::getWeapon() const
 {
 	return this->_Weapon;
 }
 
-std::string	&HumanB::getName()
+std::string const	&HumanB::getName() const
 {
 	return this->_name;
 }
@@ -41,7 +41,7 @@ void		HumanB::setWeapon(Weapon &weapon)
 	this->_Weapon = &weapon;	
 }
 
-void	HumanB::attack()
+void	HumanB::attack() const
 {
 	if (!this->_Weapon)
 		return ;

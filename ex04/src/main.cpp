@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:13:21 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/15 13:40:47 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:49:44 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fstream>
 #include <sstream>
 
-static std::string	__remplace(std::string tmp, std::string s1, std::string s2)
+static inline std::string	__remplace(std::string tmp, std::string s1, std::string s2)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ static std::string	__remplace(std::string tmp, std::string s1, std::string s2)
 	return (tmp);
 }
 
-static std::string	__remplace(std::string tmp, std::string s1)
+static inline std::string	__remplace(std::string tmp, std::string s1)
 {
 	size_t	i;
 
@@ -47,6 +47,7 @@ int	main(int const ac, char const **av)
 	std::ifstream		src;
 	std::ofstream		dest;
 	std::stringstream	tmp;
+
 	if (ac < 3 || ac > 4 || !av[1][0] || !av[2][0])
 	{
 		std::cerr << "Wrong argument input.\n";
@@ -63,7 +64,7 @@ int	main(int const ac, char const **av)
 	if (dest.fail())
 	{
 		src.close();
-		std::cerr << "Problem on creating file.\n";
+		std::cerr << "Problem on opening file.\n";
 		return 1;
 	}
 	tmp << src.rdbuf();

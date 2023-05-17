@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 05:28:46 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 22:11:08 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:34:38 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main()
 {
-	std::string	test = "\"HI THIS IS BRAIN\"";
+	std::string	test = "HI THIS IS BRAIN";
 	std::string	*stringPTR = &test;
 	std::string	&stringREF = test;
 
@@ -25,4 +25,5 @@ int	main()
 	std::cout	<< 	"test : " << test << '\n';
 	std::cout	<< 	"*stringPTR : " << *stringPTR << '\n';
 	std::cout	<< 	"stringREF : " << stringREF << '\n';
+	return 0;
 }

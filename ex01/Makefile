@@ -6,7 +6,7 @@
 #    By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/24 23:20:21 by mcourtoi          #+#    #+#              #
-#    Updated: 2023/05/11 05:06:24 by mcourtoi         ###   ########.fr        #
+#    Updated: 2023/05/17 17:30:18 by mcourtoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ NAME		=	zombie
 #######################################
 SRC_DIR		=	src
 OBJ_DIR		=	objs
-INC_DIR		=	private
+PRV_DIR		=	private
 
 ######################################
 #            SOURCE FILES            #
@@ -54,7 +54,7 @@ CXXFLAGS	+=	-Wall -Wextra -Werror
 CXXFLAGS	+=	-MMD -MP
 CXXFLAGS	+=	-Wshadow
 CXXFLAGS	+=	-std=c++98
-CXXFLAGS	+=	-I${INC_DIR}
+CXXFLAGS	+=	-I${PRV_DIR}
 
 #######################################
 #                RULES                #

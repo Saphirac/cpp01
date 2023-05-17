@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 22:14:50 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 22:40:24 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:44:31 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ public :
 	Weapon(std::string type);
 	~Weapon();
 
-	std::string	&getType();
-	void		setType(std::string type);
+	std::string const	&getType() const;
+	void				setType(std::string type);
 };
 
 #endif

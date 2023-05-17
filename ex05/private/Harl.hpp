@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:30:13 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/15 17:05:45 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:51:20 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Harl;
 
-typedef void			(Harl::*t_func)(void) const;
+typedef void				(Harl::*t_func)(void) const;
 typedef struct s_complain	t_complain;
 
 struct s_complain
@@ -28,6 +28,7 @@ struct s_complain
 
 class Harl	{
 private:
+
 	static	t_complain	__lookup[];
 
 	void	debug() const;
@@ -35,6 +36,7 @@ private:
 	void	warning() const;
 	void	error() const;
 public:
+
 	Harl();
 	~Harl();
 	void	complain(std::string const &level) const;

@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 22:22:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 23:04:35 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:44:21 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ public :
 	HumanB(std::string name);
 	~HumanB();
 
-	Weapon	*getWeapon();
-	std::string	&getName();
-	void		setName(std::string name);
-	void		setWeapon(Weapon &weapon);
+	Weapon		const	*getWeapon() const;
+	std::string const	&getName() const;
+	void				setName(std::string name);
+	void				setWeapon(Weapon &weapon);
 
-	void	attack();
+	void	attack() const;
 };
 
 #endif

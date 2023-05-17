@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 05:15:21 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 05:23:59 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:33:17 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <cstdlib>
 #include <iostream>
 
-Zombie* zombieHorde(size_t n, std::string name);
+Zombie *zombieHorde(size_t n, std::string name);
 
 int	main()
 {

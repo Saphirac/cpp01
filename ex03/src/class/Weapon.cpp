@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 22:23:43 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 22:35:45 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:44:44 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ Weapon::Weapon(std::string type)
 
 Weapon::~Weapon(){}
 
-std::string	&Weapon::getType()
+std::string const	&Weapon::getType() const
 {
 	return this->_type;
 }
 
-void		Weapon::setType(std::string type)
+void				Weapon::setType(std::string type)
 {
 	this->_type = type;
 }

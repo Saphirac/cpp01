@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:30:13 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/15 17:30:14 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:52:04 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Harl;
 
-typedef void			(Harl::*t_func)(void) const;
+typedef void				(Harl::*t_func)(void) const;
 typedef struct s_complain	t_complain;
 
 struct s_complain

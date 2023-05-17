@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 04:18:07 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/05/11 04:51:12 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:32:45 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@
 
 class Zombie {
 private :
-std::string _name;
+
+	std::string	_name;
+
 public :
+
 	Zombie(std::string name);
 	Zombie();
 	~Zombie();
-	void	announce();
+	void	announce() const;
 };
 
 #endif
